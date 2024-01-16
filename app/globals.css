@@ -18,10 +18,51 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+@layer base {
+  h1 {
+    @apply text-3xl font-bold mb-2;
+  }
+
+  h2 {
+    @apply text-xl font-semibold mb-1;
+  }
+
+  a {
+    @apply underline text-blue-600 hover:text-purple-500 transition decoration-wavy underline-offset-1;
+  }
+
+  .btn {
+    @apply px-4 py-2 rounded-lg hover:transition hover:duration-300 hover:opacity-80 disabled:bg-slate-300 hover:disabled:opacity-100;
+  }
+
+  .btn-primary {
+    @apply bg-blue-600 text-white;
+  }
+
+  .btn-secondary {
+    @apply bg-slate-800 text-white;
+  }
+
+  input,
+  select {
+    @apply text-slate-500 outline-none border border-slate-300 rounded-sm p-1 mb-1
+  }
+
+  input[type="text"] {
+    @apply outline-none border border-slate-300 rounded-sm p-1 mb-1 disabled:bg-slate-100 placeholder:italic
+  }
+
+  input[type="checkbox"] {
+    @apply p-2 accent-purple-500 mr-1
+  }
+
+  label {
+    @apply text-sm text-slate-700 font-medium
+  }
+
 }
